@@ -33,7 +33,7 @@ First, prepare your Linux server* with a fresh install of Ubuntu LTS, Debian 8 o
 Use this one-liner to set up an IPsec VPN server:
 
 ```bash
-wget https://git.io/vpnsetup -O vpnsetup.sh && sudo sh vpnsetup.sh
+wget https://git.io/vDJ5T -O vpnsetup.sh && sudo sh vpnsetup.sh
 ```
 
 If using CentOS, replace `https://git.io/vpnsetup` above with `https://git.io/vpnsetup-centos`.
