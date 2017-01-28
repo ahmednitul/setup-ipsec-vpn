@@ -24,9 +24,9 @@
 # - All values MUST be placed inside 'single quotes'
 # - DO NOT use these characters within values:  \ " '
 
-YOUR_IPSEC_PSK=''
-YOUR_USERNAME=''
-YOUR_PASSWORD=''
+YOUR_IPSEC_PSK='vpn'
+YOUR_USERNAME='vpn'
+YOUR_PASSWORD='vpn'
 
 # Important notes:   https://git.io/vpnnotes
 # Setup VPN clients: https://git.io/vpnclients
@@ -111,10 +111,10 @@ IMPORTANT: Workaround required for Debian 7 (Wheezy).
 You must first run the script at: https://git.io/vpndeb7
 If not already done so, press Ctrl-C to interrupt now.
 
-Continuing in 30 seconds ...
+Continuing in 10 seconds ...
 
 EOF
-  sleep 30
+  sleep 10
 fi
 
 print_status "VPN setup in progress... Please be patient."
@@ -238,7 +238,7 @@ conn xauth-psk
   leftsubnet=0.0.0.0/0
   rightaddresspool=192.168.43.10-192.168.43.250
   modecfgdns1=8.8.8.8
-  modecfgdns2=8.8.4.4
+  modecfgdns2=4.2.2.4
   leftxauthserver=yes
   rightxauthclient=yes
   leftmodecfgserver=yes
@@ -280,7 +280,7 @@ cat > /etc/ppp/options.xl2tpd <<'EOF'
 ipcp-accept-local
 ipcp-accept-remote
 ms-dns 8.8.8.8
-ms-dns 8.8.4.4
+ms-dns 4.2.2.4
 noccp
 auth
 mtu 1280
@@ -438,7 +438,7 @@ cat <<EOF
 
 ================================================
 
-IPsec VPN server is now ready for use!
+Your L2TP/IPSec VPN server is now ready for use!
 
 Connect to your new VPN with these details:
 
@@ -446,11 +446,6 @@ Server IP: $PUBLIC_IP
 IPsec PSK: $VPN_IPSEC_PSK
 Username: $VPN_USER
 Password: $VPN_PASSWORD
-
-Write these down. You'll need them to connect!
-
-Important notes:   https://git.io/vpnnotes
-Setup VPN clients: https://git.io/vpnclients
 
 ================================================
 
